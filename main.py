@@ -4,29 +4,32 @@ from sys import exit
 
 class FizzBuzz(object):
 
-    def __init__(self, i: int):
+    def __init__(self, i: int) -> None:
         """
-
+        Just takes the input data and stores it internally. Nothing else.
         """
 
         self._i = i
 
 ################################################################################
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """
+        :return: FizzBuzz representation of the integer input.
         """
 
-        :return:
-        """
+        out = ""
 
-        if self._i % 3 == 0 and self._i % 5 == 0:
-            return "fizz buzz"
-        elif self._i % 3 == 0:
-            return "fizz"
+        if self._i % 3 == 0:
+            out += "fizz"
+            if self._i % 5 == 0:
+                out += " buzz"
         elif self._i % 5 == 0:
-            return "buzz"
+            out += "buzz"
         else:
-            return str(self._i)
+            out += str(self._i)
+
+        return out
 
 ################################################################################
 
